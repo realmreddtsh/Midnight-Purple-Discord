@@ -3,3 +3,10 @@
 ## This theme uses Google's ***Google Sans*** font. [Check it out](https://fonts.google.com/specimen/Google+Sans).
 ### Preview photos
 [Screenshot 2026-08-16 112940.png](https://github.com/realmreddtsh/Midnight-Purple-Discord/blob/main/Screenshot%202026-08-16%20112940.png?raw=true)
+# Installation
+### Download the [MidnightPurple.theme.css](https://github.com/realmreddtsh/Midnight-Purple-Discord/blob/main/MidnightPurple.theme.css) file.
+## For [Vencord](https://vencord.dev/)
+### Go to Themes in Vencord's settings, press ***Open Themes Folder*** button. A folder should open in your file explorer. Drag the MidnightPurple.theme.css file into the folder. If the theme doesn't show up in your Themes list, press ***Load Missing Themes***.
+## For [BetterDiscord](https://betterdiscord.app/)
+### Follow this [tutorial](https://docs.betterdiscord.app/users/guides/installing-addons).
+
