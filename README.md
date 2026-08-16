@@ -2,7 +2,7 @@
 ## You can take a look at the [chat](https://chatgpt.com/share/6a81e41f-7004-83ea-9625-c8642aa10261) if you wish.
 ## This theme uses Google's ***Google Sans*** font. [Check it out](https://fonts.google.com/specimen/Google+Sans).
 ### Preview photos
-[Screenshot 2026-08-16 112940.png](https://github.com/realmreddtsh/Midnight-Purple-Discord/blob/main/Screenshot%202026-08-16%20112940.png?raw=true)
+[https://raw.githubusercontent.com/realmreddtsh/Midnight-Purple-Discord/refs/heads/main/Screenshot%202026-08-16%20112940.png]
 # Installation
 ### Download the [MidnightPurple.theme.css](https://github.com/realmreddtsh/Midnight-Purple-Discord/blob/main/MidnightPurple.theme.css) file.
 ## For [Vencord](https://vencord.dev/)
