@@ -1,0 +1,582 @@
+/**
+ * @name Midnight Purple
+ * @author mreddtsh, coded by ChatGPT
+ * @description A midnight-black Discord theme with subtle purple accents and rounded UI.
+ * @version 1.0.0
+ * @source https://github.com/realmreddtsh/midnight-purple-discord
+ */
+/* =========================================================
+   MIDNIGHT PURPLE — Discord Theme
+   Font: Google Sans
+   ========================================================= */
+
+/* Google Sans */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+
+/* =========================================================
+   CORE COLORS
+   ========================================================= */
+
+:root {
+  --midnight-black: #050507;
+  --black: #08080b;
+  --dark: #0b0b0f;
+  --dark-2: #101016;
+  --dark-3: #14141b;
+  --dark-4: #191921;
+
+  --purple: #8b5cf6;
+  --purple-bright: #a970ff;
+  --purple-dark: #6d3fd1;
+  --purple-glow: rgba(139, 92, 246, 0.25);
+
+  --text-primary: #f2eef8;
+  --text-secondary: #aaa5b5;
+  --text-muted: #716d78;
+
+  --border: rgba(139, 92, 246, 0.13);
+  --border-hover: rgba(139, 92, 246, 0.3);
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  font-family: "Google Sans", sans-serif !important;
+}
+
+body {
+  background: var(--midnight-black) !important;
+}
+
+/* =========================================================
+   MAIN DISCORD BACKGROUND
+   ========================================================= */
+
+.theme-dark {
+  --background-primary: var(--dark);
+  --background-secondary: var(--black);
+  --background-secondary-alt: var(--dark-2);
+  --background-tertiary: var(--midnight-black);
+  --background-floating: #111116;
+
+  --channeltextarea-background: #101016;
+
+  --text-normal: var(--text-primary);
+  --text-muted: var(--text-muted);
+  --text-link: var(--purple-bright);
+
+  --interactive-normal: #aaa5b5;
+  --interactive-hover: #e5def0;
+  --interactive-active: #ffffff;
+  --interactive-muted: #57535f;
+
+  --background-modifier-hover: rgba(139, 92, 246, 0.08);
+  --background-modifier-active: rgba(139, 92, 246, 0.14);
+  --background-modifier-selected: rgba(139, 92, 246, 0.18);
+
+  --background-modifier-accent: rgba(139, 92, 246, 0.12);
+}
+
+/* =========================================================
+   SERVER LIST
+   ========================================================= */
+
+[class*="guilds_"] {
+  background: #030305 !important;
+}
+
+[class*="guild_"] {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+[class*="guild_"]:hover {
+  filter: brightness(1.18);
+  transform: translateY(-1px);
+}
+
+/* Selected server */
+
+/* =========================================================
+   SELECTED SERVER — SUBTLE ROUNDED OUTLINE
+   ========================================================= */
+
+[class*="guild_"][class*="selected_"] [class*="childWrapper_"],
+[class*="guild_"][class*="selected_"] [class*="wrapper_"] {
+  background: transparent !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Keep the server icon itself circular/rounded */
+[class*="guild_"][class*="selected_"] img {
+  border-radius: 50% !important;
+}
+
+/* Remove Discord's large selection pill */
+[class*="guild_"][class*="selected_"]::before {
+  display: none !important;
+}
+
+/* =========================================================
+   SERVER / CHANNEL SIDEBAR
+   ========================================================= */
+
+[class*="sidebar_"] {
+  background: #08080b !important;
+  border-right: 1px solid var(--border);
+}
+
+/* Server name */
+
+[class*="header_"] {
+  background: #07070a !important;
+  box-shadow: none !important;
+}
+
+/* Channel items */
+
+[class*="channel_"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+[class*="channel_"]:hover {
+  background: rgba(139, 92, 246, 0.08) !important;
+}
+
+[class*="modeSelected_"] {
+  background: rgba(139, 92, 246, 0.16) !important;
+}
+
+[class*="modeSelected_"] [class*="name_"] {
+  color: var(--purple-bright) !important;
+}
+
+/* =========================================================
+   CATEGORY TITLES
+   ========================================================= */
+
+[class*="containerDefault_"] [class*="name_"] {
+  color: #817b8c !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   CHAT AREA
+   ========================================================= */
+
+[class*="chat_"] {
+  background: var(--dark) !important;
+}
+
+[class*="content_"] {
+  background: var(--dark) !important;
+}
+
+/* =========================================================
+   MESSAGE HOVER
+   ========================================================= */
+
+[class*="message_"] {
+  transition: background 0.1s ease;
+}
+
+[class*="message_"]:hover {
+  background: rgba(139, 92, 246, 0.035) !important;
+}
+
+/* =========================================================
+   USERNAMES
+   ========================================================= */
+
+[class*="username_"] {
+  font-weight: 600 !important;
+}
+
+[class*="username_"]:hover {
+  color: var(--purple-bright) !important;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: var(--purple-bright) !important;
+}
+
+a:hover {
+  color: #c49cff !important;
+}
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+[class*="channelTextArea_"] {
+  background: #0d0d12 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+[class*="channelTextArea_"]:focus-within {
+  border-color: rgba(139, 92, 246, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  font-family: "Google Sans", sans-serif !important;
+}
+
+button[class*="lookFilled_"] {
+  background: var(--purple) !important;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button[class*="lookFilled_"]:hover {
+  background: var(--purple-bright) !important;
+}
+
+button[class*="lookFilled_"]:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   USER PANEL
+   ========================================================= */
+
+[class*="panels_"] {
+  background: #050507 !important;
+  border-top: 1px solid var(--border);
+}
+
+[class*="container__"] {
+  background: transparent !important;
+}
+
+/* =========================================================
+   MEMBERS LIST
+   ========================================================= */
+
+[class*="members_"] {
+  background: #08080b !important;
+}
+
+[class*="member_"] {
+  border-radius: 6px !important;
+  margin: 2px 6px !important;
+}
+
+[class*="member_"]:hover {
+  background: rgba(139, 92, 246, 0.07) !important;
+}
+
+/* =========================================================
+   UNREAD INDICATORS
+   ========================================================= */
+
+[class*="unread_"] {
+  background: var(--purple) !important;
+  box-shadow: 0 0 8px var(--purple-glow);
+}
+
+/* =========================================================
+   MENTIONS
+   ========================================================= */
+
+[class*="mentioned_"] {
+  background: rgba(139, 92, 246, 0.08) !important;
+  border-left: 3px solid var(--purple) !important;
+}
+
+[class*="mentioned_"]::before {
+  background: var(--purple) !important;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #050507 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24212b !important;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3150 !important;
+}
+
+/* =========================================================
+   SEARCH BAR
+   ========================================================= */
+
+[class*="searchBar_"] {
+  background: #111116 !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+}
+
+[class*="searchBar_"]:focus-within {
+  border-color: var(--purple) !important;
+}
+
+/* =========================================================
+   POPOUTS / MODALS
+   ========================================================= */
+
+[class*="layer_"] [class*="container_"],
+[class*="popout_"],
+[class*="modal_"] {
+  background: #0b0b10 !important;
+  border: 1px solid var(--border) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(139, 92, 246, 0.06) !important;
+}
+
+/* =========================================================
+   CONTEXT MENUS
+   ========================================================= */
+
+[class*="menu_"] {
+  background: #0b0b10 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65) !important;
+}
+
+[class*="item_"]:hover {
+  background: rgba(139, 92, 246, 0.12) !important;
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+[class*="standardSidebarView_"] {
+  background: #08080b !important;
+}
+
+[class*="contentRegion_"] {
+  background: #0b0b10 !important;
+}
+
+[class*="sidebarRegion_"] {
+  background: #050507 !important;
+}
+
+[class*="selected_"] {
+  color: var(--purple-bright) !important;
+}
+
+/* =========================================================
+   CHECKBOXES / SWITCHES
+   ========================================================= */
+
+[class*="checked_"] {
+  background: var(--purple) !important;
+}
+
+/* =========================================================
+   SLIDERS
+   ========================================================= */
+
+[class*="barFill_"] {
+  background: var(--purple) !important;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: white;
+}
+
+/* =========================================================
+   PURPLE GLOW ON FOCUS
+   ========================================================= */
+
+input:focus,
+textarea:focus {
+  outline: none !important;
+}
+
+/* =========================================================
+   FINAL POLISH
+   ========================================================= */
+
+[class*="divider_"] {
+  background: rgba(139, 92, 246, 0.08) !important;
+}
+
+[class*="separator_"] {
+  background: rgba(139, 92, 246, 0.08) !important;
+}
+
+[class*="typing_"] {
+  color: #9186a5 !important;
+}
+
+[class*="newMessagesBar_"] {
+  background: var(--purple) !important;
+  border-radius: 6px !important;
+}
+
+[class*="jumpToPresentBar_"] {
+  background: #15111d !important;
+  border: 1px solid var(--border) !important;
+}
+/* =========================================================
+   GLOBAL ROUNDED UI
+   Remove Discord's sharp 90° corners
+   ========================================================= */
+
+/* General UI elements */
+[class*="container_"],
+[class*="wrapper_"],
+[class*="item_"],
+[class*="button_"],
+[class*="input_"],
+[class*="searchBar_"],
+[class*="channel_"],
+[class*="member_"],
+[class*="message_"],
+[class*="popout_"],
+[class*="menu_"],
+[class*="modal_"],
+[class*="card_"],
+[class*="panel_"],
+[class*="section_"],
+[class*="select_"],
+[class*="selectPosition_"],
+[class*="autocomplete_"],
+[class*="channelTextArea_"],
+[class*="textArea_"],
+[class*="bar_"],
+[class*="progress_"],
+[class*="notice_"],
+[class*="banner_"] {
+  border-radius: 10px !important;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px !important;
+}
+
+/* Selected channels */
+[class*="modeSelected_"] {
+  border-radius: 8px !important;
+}
+
+/* Selected settings/options */
+[class*="selected_"] {
+  border-radius: 8px !important;
+}
+
+/* Checkboxes and switches */
+[class*="checkbox_"],
+[class*="switch_"] {
+  border-radius: 6px !important;
+}
+
+/* Server icons */
+[class*="guild_"] img {
+  border-radius: 50% !important;
+}
+
+/* Selected server outline */
+[class*="guild_"][class*="selected_"] [class*="wrapper_"] {
+  border-radius: 50% !important;
+}
+
+/* Avatars */
+[class*="avatar_"],
+[class*="avatarDecoration_"] {
+  border-radius: 50% !important;
+}
+
+/* Search */
+[class*="searchBar_"] {
+  border-radius: 10px !important;
+}
+
+/* Message input */
+[class*="channelTextArea_"] {
+  border-radius: 12px !important;
+}
+
+/* Popouts */
+[class*="popout_"],
+[class*="menu_"],
+[class*="modal_"] {
+  border-radius: 12px !important;
+}
+
+/* Context menu items */
+[class*="menu_"] [class*="item_"] {
+  border-radius: 7px !important;
+}
+
+/* Tags / pills */
+[class*="tag_"],
+[class*="pill_"],
+[class*="badge_"] {
+  border-radius: 999px !important;
+}
+
+/* Tooltips */
+[class*="tooltip_"] {
+  border-radius: 8px !important;
+}
+
+/* =========================================================
+   REMOVE SHARP SELECTION EDGES
+   ========================================================= */
+
+[class*="selected_"]::before,
+[class*="selected_"]::after {
+  border-radius: 8px !important;
+}
+
+/* Selected server — circular outline */
+[class*="guild_"][class*="selected_"]::before {
+  border-radius: 50% !important;
+}
+
+/* =========================================================
+   SUBTLE ROUNDED PURPLE HIGHLIGHTS
+   ========================================================= */
+
+[class*="modeSelected_"],
+[class*="selected_"] {
+  box-shadow: none !important;
+}
+
+/* Keep channel/category names in their normal capitalization */
+[class*="containerDefault_"] [class*="name_"],
+[class*="channel_"] [class*="name_"] {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
